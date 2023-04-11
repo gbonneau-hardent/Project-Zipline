@@ -237,9 +237,9 @@ begin
     
     for(int k=0;k<N_FANOUT_REPLICATORS;k++)
       begin
-          work_table_entry    <= '{default:0};
-          node_ptr            <= '{default:0};
-	  row_ptr_del        <= 0;
+          work_table_entry[k]    <= '{default:0};
+          node_ptr[k]            <= '{default:0};
+	      row_ptr_del[k]         <= 0;
       end
 
     ht_hw_eob           <= MIDDLE;
