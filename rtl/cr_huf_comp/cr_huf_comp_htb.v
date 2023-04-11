@@ -237,7 +237,7 @@ begin
     
     for(int k=0;k<N_FANOUT_REPLICATORS;k++)
       begin
-          work_table_entry    <= '{default:'0};
+          work_table_entry    <= '{default:0, default:0};
           node_ptr            <= '{default:0};
 	  row_ptr_del        <= 0;
       end
