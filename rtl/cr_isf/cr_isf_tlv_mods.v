@@ -1118,10 +1118,24 @@ module cr_isf_tlv_mods
       aux_cmd_match3_ev             <= cmd_stats_en && isf_cmd_ld[2] && ctl_config.aux_cmd_match3_en ? 
                                        comp_match3 && crypto_match3 : 1'b0;
 
-      for (k=0; k<=12; k=k+1)
-      begin
-        isf_frmd_reg[k] <= isf_frmd_ld[k] ? isf_term_tlv.tdata : isf_frmd_reg[k];
-      end
+      //for (k=0; k<=12; k=k+1)
+      //begin
+      //  isf_frmd_reg[k] <= isf_frmd_ld[k] ? isf_term_tlv.tdata : isf_frmd_reg[k];
+      //end
+      isf_frmd_reg[0] <= isf_frmd_ld[0] ? isf_term_tlv.tdata : isf_frmd_reg[0];
+      isf_frmd_reg[1] <= isf_frmd_ld[1] ? isf_term_tlv.tdata : isf_frmd_reg[1];
+      isf_frmd_reg[2] <= isf_frmd_ld[2] ? isf_term_tlv.tdata : isf_frmd_reg[2];
+      isf_frmd_reg[3] <= isf_frmd_ld[3] ? isf_term_tlv.tdata : isf_frmd_reg[3];
+      isf_frmd_reg[4] <= isf_frmd_ld[4] ? isf_term_tlv.tdata : isf_frmd_reg[4];
+      isf_frmd_reg[5] <= isf_frmd_ld[5] ? isf_term_tlv.tdata : isf_frmd_reg[5];
+      isf_frmd_reg[6] <= isf_frmd_ld[6] ? isf_term_tlv.tdata : isf_frmd_reg[6];
+      isf_frmd_reg[7] <= isf_frmd_ld[7] ? isf_term_tlv.tdata : isf_frmd_reg[7];
+      isf_frmd_reg[8] <= isf_frmd_ld[8] ? isf_term_tlv.tdata : isf_frmd_reg[8];
+      isf_frmd_reg[9] <= isf_frmd_ld[9] ? isf_term_tlv.tdata : isf_frmd_reg[9];
+      isf_frmd_reg[10] <= isf_frmd_ld[10] ? isf_term_tlv.tdata : isf_frmd_reg[10];
+      isf_frmd_reg[11] <= isf_frmd_ld[11] ? isf_term_tlv.tdata : isf_frmd_reg[11];
+      isf_frmd_reg[12] <= isf_frmd_ld[12] ? isf_term_tlv.tdata : isf_frmd_reg[12];
+      
 
       
       
