@@ -1,7 +1,7 @@
 /*************************************************************************
 *
-* Copyright © Microsoft Corporation. All rights reserved.
-* Copyright © Broadcom Inc. All rights reserved.
+* Copyright ï¿½ Microsoft Corporation. All rights reserved.
+* Copyright ï¿½ Broadcom Inc. All rights reserved.
 * Licensed under the MIT License.
 *
 *************************************************************************/
@@ -237,7 +237,7 @@ begin
     
     for(int k=0;k<N_FANOUT_REPLICATORS;k++)
       begin
-          work_table_entry    <= '{default:0};
+          work_table_entry    <= '{default:'0};
           node_ptr            <= '{default:0};
 	  row_ptr_del        <= 0;
       end
