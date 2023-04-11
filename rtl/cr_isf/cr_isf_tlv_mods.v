@@ -1,7 +1,7 @@
 /*************************************************************************
 *
-* Copyright © Microsoft Corporation. All rights reserved.
-* Copyright © Broadcom Inc. All rights reserved.
+* Copyright ï¿½ Microsoft Corporation. All rights reserved.
+* Copyright ï¿½ Broadcom Inc. All rights reserved.
 * Licensed under the MIT License.
 *
 *************************************************************************/
@@ -1022,10 +1022,23 @@ module cr_isf_tlv_mods
   begin
     if (~rst_n) 
     begin
-      for (j=0; j<=12; j=j+1)
-      begin
-        isf_frmd_reg[j] <= 64'h0;
-      end
+      //for (j=0; j<=12; j=j+1)
+      //begin
+      //  isf_frmd_reg[j] <= 64'h0;
+      //end
+      isf_frmd_reg[0] <= 64'h0;
+      isf_frmd_reg[1] <= 64'h0;
+      isf_frmd_reg[2] <= 64'h0;
+      isf_frmd_reg[3] <= 64'h0;
+      isf_frmd_reg[4] <= 64'h0;
+      isf_frmd_reg[5] <= 64'h0;
+      isf_frmd_reg[6] <= 64'h0;
+      isf_frmd_reg[7] <= 64'h0;
+      isf_frmd_reg[8] <= 64'h0;
+      isf_frmd_reg[9] <= 64'h0;
+      isf_frmd_reg[10] <= 64'h0;
+      isf_frmd_reg[11] <= 64'h0;
+      isf_frmd_reg[12] <= 64'h0;
 
       cmd_comp_mode_reg             <= cmd_comp_mode_e'(0);
       cmd_frmd_out_type_reg         <= tlv_types_e'(0);
