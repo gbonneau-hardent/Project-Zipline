@@ -59,7 +59,7 @@ module nx_ram_2rw_indirect_access
     OUT_FLOP=0,
     RD_LATENCY=1,
     SW_RD_PORT=0,
-    SW_WR_PORT=0
+    SW_WR_PORT=0,
     parameter [`BIT_VEC(N_DATA_BITS)] RESET_DATA=0)
    (input logic                             clk,
     input logic 			    rst_n,

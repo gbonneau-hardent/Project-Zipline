@@ -278,9 +278,9 @@ module cr_prefix_fe_ctlr
               else begin
                 fe_ctlr_sw_blk <= 1'b0;
               end
- 
-            
           end
+          end
+          
         SW_BLK: 
           begin
             fe_ctlr_sw_blk <= 1'b0;

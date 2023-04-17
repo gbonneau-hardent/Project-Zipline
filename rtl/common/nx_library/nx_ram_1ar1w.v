@@ -28,6 +28,7 @@
 `include "messages.vh"
 
 module nx_ram_1ar1w #(parameter
+                   RD_LATENCY = 1,
                    WIDTH      = 64,
                    DEPTH      = 256,
                    BWEWIDTH = WIDTH,
@@ -226,7 +227,7 @@ module nx_ram_1ar1w #(parameter
            if (OUT_FLOP) begin
               logic [WIDTH-1:0] dout_r;
               always_ff @(posedge clk) begin
-                 dout_r <= dout_i
+                 dout_r <= dout_i;
               end
               assign ldout = dout_r;
            end
