@@ -151,19 +151,19 @@ module zipline_tb;
         $value$plusargs("TESTNAME=%s", testname);
         $display("TESTNAME=%s SEED=%d", testname, seed);
      end else begin
-	testname="unknown";	
+	testname="cfh_4k";	
      end
      
      if ( $test$plusargs("waves") ) begin
         if( $test$plusargs("dump_fsdb") ) begin
-          $value$plusargs("fsdbfile+%s", fsdbFilename);
-          $fsdbDumpfile(fsdbFilename);
-          $fsdbDumpvars(0, `FSDB_PATH);
-          $fsdbDumpMDA(0, `FSDB_PATH);
-          $fsdbDumpvars(0, "+all", `FSDB_PATH);
+          //$value$plusargs("fsdbfile+%s", fsdbFilename);
+          //$fsdbDumpfile(fsdbFilename);
+          //$fsdbDumpvars(0, `FSDB_PATH);
+          //$fsdbDumpMDA(0, `FSDB_PATH);
+          //$fsdbDumpvars(0, "+all", `FSDB_PATH);
         end else begin
-          $vcdpluson();
-          $vcdplusmemon();
+          //$vcdpluson();
+          //$vcdplusmemon();
         end
      end
 
@@ -224,7 +224,7 @@ module zipline_tb;
     logic          saw_cqe;
 
     
-    file_name = $psprintf("../tests/%s.inbound", testname);
+    file_name = $sformatf("../../../../../../../../git/Project-Zipline/dv/CDD_64/tests/%s.inbound", testname);
     file_descriptor = $fopen(file_name, "r");
     if ( file_descriptor == 0 ) begin
       $display ("INBOUND_FATAL:  @time:%-d File %s NOT found!", $time, file_name );
@@ -239,6 +239,9 @@ module zipline_tb;
         ib_tlast <= 1'b0;
         if ( $fgets(vector,file_descriptor) ) begin
           str_get = $sscanf(vector, "0x%h %s 0x%h", tdata, tuser_string, tstrb);
+          if ( str_get == 2 ) begin
+            $sscanf(tuser_string, "0x%h", tstrb);
+          end
 //        $display ("INBOUND_INFO:  @time:%-d parsed vector --> 0x%h %s 0x%h %d", $time, tdata, tuser_string, tstrb, str_get ); 
           if ( str_get >= 2 ) begin
             $display ("INBOUND_INFO:  @time:%-d vector --> %s", $time, vector ); 
@@ -297,7 +300,7 @@ module zipline_tb;
     integer        rc;
 
     
-    file_name = $psprintf("../tests/%s.outbound", testname);
+    file_name = $sformatf("../../../../../../../../git/Project-Zipline/dv/CDD_64/tests/%s.outbound", testname);
     file_descriptor = $fopen(file_name, "r");
     if ( file_descriptor == 0 ) begin
       $display ("OUTBOUND_FATAL:  @time:%-d File %s NOT found!", $time, file_name );
@@ -322,6 +325,9 @@ module zipline_tb;
           end
           $display ("OUTBOUND_INFO:  @time:%-d vector --> %s", $time, vector );
           str_get = $sscanf(vector, "0x%h %s 0x%h", tdata, tuser_string, tstrb);
+          if ( str_get == 2 ) begin
+            $sscanf(tuser_string, "0x%h", tstrb);
+          end          
 //        $display ("OUTBOUND_INFO:  @time:%-d parsed vector --> 0x%h %s 0x%h %d", $time, tdata, tuser_string, tstrb, str_get ); 
           if ( str_get == 3 ) begin
             tuser = translate_tuser( tuser_string );
@@ -398,7 +404,7 @@ module zipline_tb;
     reg            response;
 
     
-    file_name = $psprintf("../tests/%s.config", testname);
+    file_name = $sformatf("../../../../../../../../git/Project-Zipline/dv/CDD_64/tests/%s.config", testname);
     file_descriptor = $fopen(file_name, "r");
     if ( file_descriptor == 0 ) begin
       $display ("\nAPB_INFO:  @time:%-d File %s NOT found!\n", $time, file_name );

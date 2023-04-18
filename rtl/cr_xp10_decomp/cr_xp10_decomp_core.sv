@@ -377,7 +377,8 @@ module cr_xp10_decomp_core
          .xp9_simple_short_blk_stb      (hufd_stat_events[crPKG::HUFD_HTF_XP9_SIMPLE_SHORT_BLK_TOTAL]), 
          .input_stall_stb               (hufd_stat_events[crPKG::HUFD_SDD_INPUT_STALL_TOTAL]), 
          .buf_full_stall_stb            (hufd_stat_events[crPKG::HUFD_SDD_BUF_FULL_STALL_TOTAL]), 
-         .mtf_stb                       (hufd_stat_events[crPKG::HUFD_MTF_0_TOTAL +: 4]), 
+       //.mtf_stb                       (hufd_stat_events[crPKG::HUFD_MTF_0_TOTAL +: 4]), 
+         .mtf_stb                       (hufd_stat_events[365 +: 4]), 
          
          .clk                           (clk),
          .rst_n                         (rst_n),
