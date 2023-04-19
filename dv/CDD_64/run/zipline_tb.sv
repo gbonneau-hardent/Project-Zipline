@@ -151,7 +151,7 @@ module zipline_tb;
         $value$plusargs("TESTNAME=%s", testname);
         $display("TESTNAME=%s SEED=%d", testname, seed);
      end else begin
-	testname="cfh_4k";	
+	testname="gzip";	
      end
      
      if ( $test$plusargs("waves") ) begin
