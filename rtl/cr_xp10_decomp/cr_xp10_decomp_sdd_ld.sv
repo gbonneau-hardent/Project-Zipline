@@ -146,6 +146,7 @@ module cr_xp10_decomp_sdd_ld (
    logic [`BIT_VEC_BASE(`N_MAX_HUFF_BITS, 1)][`LOG_VEC(`N_XP10_64K_LONG_SYMBOLS)] v_ll_sat;
    logic [`BIT_VEC(`N_XP10_64K_LONG_SYMBOLS)][`LOG_VEC(`N_XP10_64K_LONG_SYMBOLS)] v_ll_slt;
    logic [`LOG_VEC(`N_XP10_64K_LONG_SYMBOLS+1)]                                   v_ll_used_symbols;
+   sdd_ld_lane_state_t v_lane_state; 
 
    genvar                                                                         ii;
    generate
@@ -448,7 +449,6 @@ module cr_xp10_decomp_sdd_ld (
          v_lane_state_arr >>= $bits(sdd_ld_lane_state_t); 
          for (int i=0; i<32; i++) begin
             sdd_ld_lane_state_t [27:1] v_local_lane_state_arr;
-            sdd_ld_lane_state_t v_lane_state; 
 
             
             v_local_lane_state_arr = v_lane_state_arr;

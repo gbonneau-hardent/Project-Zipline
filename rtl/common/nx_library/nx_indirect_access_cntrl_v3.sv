@@ -235,6 +235,7 @@ module nx_indirect_access_cntrl_v3
                           DO_WRITE, DO_READ, READ_WAIT, READ_DONE, DO_COMPARE, 
                           COMPARE_WAIT, COMPARE_DONE} state_e;
   state_e state_r;
+	 state_e state_v;
 
   logic [`BIT_VEC(N_TIMER_BITS)] timer_r;
 
@@ -280,7 +281,6 @@ module nx_indirect_access_cntrl_v3
       else begin : cntrlr
 	 
 	 
-	 state_e state_v;
 
 	 state_v       = state_r;
 

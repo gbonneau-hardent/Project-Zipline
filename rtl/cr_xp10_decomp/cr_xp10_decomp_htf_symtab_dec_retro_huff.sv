@@ -46,6 +46,7 @@ module cr_xp10_decomp_htf_symtab_dec_retro_huff (
    output logic [`BIT_VEC(NUM_SPEC_HUFFMAN)][`LOG_VEC(`N_MAX_HUFF_BITS+1)]       huff_blt_hist_wdata;
    output logic [`BIT_VEC(NUM_SPEC_HUFFMAN)][3:0]                                huff_repeat_count;
    output htf_symtab_sub_state_t                                                 huff_sub_state[`BIT_VEC(NUM_SPEC_HUFFMAN)];
+      htf_symtab_sub_state_t                                v_sub_state_constants[`BIT_VEC(`N_SMALL_SYMBOLS)];
 
    logic [`BIT_VEC(NUM_SPEC_HUFFMAN)][`LOG_VEC(`N_MAX_SMALL_HUFF_BITS+1)] huff_length;
 
@@ -59,7 +60,6 @@ module cr_xp10_decomp_htf_symtab_dec_retro_huff (
       
       logic [`LOG_VEC(`N_MAX_HUFF_BITS+1)]       v_bl_constants[`BIT_VEC(`N_SMALL_SYMBOLS)];
       logic [3:0]                                v_repeat_constants[`BIT_VEC(`N_SMALL_SYMBOLS)];
-      htf_symtab_sub_state_t                                v_sub_state_constants[`BIT_VEC(`N_SMALL_SYMBOLS)];
       
       
       v_bl_constants = '{default: 0};

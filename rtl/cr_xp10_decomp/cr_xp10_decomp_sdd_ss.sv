@@ -87,6 +87,7 @@ module cr_xp10_decomp_sdd_ss (
    logic          pipe_dst_valid;
    logic          pipe_dst_ready;
    sdd_ss_pipe_t  pipe_dst_data;
+   sdd_ld_lane_state_t v_lane; 
 
    
 
@@ -177,7 +178,6 @@ module cr_xp10_decomp_sdd_ss (
             v_idx_mod_32 = r_selector_idx_mod_256[4:0];
 
             for (int i=0; i<4; i++) begin
-               sdd_ld_lane_state_t v_lane; 
 
                if (i==0)
                  v_lane = r_selector_reg.lane_state[v_idx_mod_32];
